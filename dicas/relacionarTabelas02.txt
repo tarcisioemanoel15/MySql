@@ -1,0 +1,43 @@
+1- relacionando tabelas where
+
+  select nomeproduto, nomefornecedor 
+  from produtos, fornecedores
+  where produtos.fornecedorID = fornecedores.fornecedorID
+
+2- mais usado relacionando tabelas inner join 
+
+#select nomeproduto, nomefornecedor from produtos, fornecedores
+#where produtos.fornecedorID = fornecedores.fornecedorID
+/**/
+select nomeproduto, nomefornecedor 
+from produtos as p
+inner join fornecedores as f
+on p.fornecedorID = f.fornecedorID
+
+/* agora com categorias e produtos*/
+
+select nomeproduto, nomecategoria
+from produtos as p
+inner join categorias as f
+on p.fornecedorID = f.categoriaID
+
+3- selecionando 3 tabelas
+
+select nomeproduto, nomecategoria, nomefornecedor
+from produtos as p
+inner join categorias as c on p.categoriaID = c.categoriaID
+inner join fornecedores as f on p.fornecedorID = f.fornecedorID
+
+
+4- /*Quantos produtos tenho por categoria ?*/
+
+-- select categoriaID, count(produtoID) as total
+-- from produtos
+-- group by categoriaID
+
+
+select nomecategoria, count(produtoID) as total
+from produtos as p
+inner join categorias as c on p.categoriaID = c.categoriaID
+group by p.categoriaID
+
