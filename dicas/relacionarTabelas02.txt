@@ -41,3 +41,33 @@ from produtos as p
 inner join categorias as c on p.categoriaID = c.categoriaID
 group by p.categoriaID
 
+
+5-
+/*pesoa e quantidade de produto que a pesoa comprou*/
+/*
+select nomecompleto, nomeproduto, count(pedidoID) as total 
+
+from clientes c
+left join pedidos p on c.clienteID = p.clienteID
+left join produtos pr on c.clienteID = pr.produtoID
+group by c.clienteID
+order by total desc
+*/
+
+/*relacionamento por agrupamento*/
+/*nome e somatoria de pedidos*/
+/*pagamento comfirmado pendente canselado canselado pela enpresa*/
+select ps.nomestatus, sum(valor_pedido)
+from pedidos p
+inner join pedidos_status ps on p.status_pedido = ps.statusID
+ group by status_pedido
+
+6-
+-- AVANSADO
+-- OBS distinct remove as repeticoes
+
+select nomecompleto, telefone, email
+from clientes c
+	inner join pedidos p on c.clienteID = p.clienteID
+    inner join pedidos_item as pi on pi.pedidoID = p.pedidoID
+    where produtoID = 2
