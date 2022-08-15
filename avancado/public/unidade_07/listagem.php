@@ -1,8 +1,15 @@
 <?php require_once("../../conexao/conexao.php"); ?>
 
 <?php
+    // iniciar variavel de seção
+    session_start();
+
+    // direcionando para pagina de login
+    if(!isset($_SESSION["user_portal"])){
+        header("location:login.php");
+    }
     // Determinar localidade BR
-    setlocale(LC_ALL, 'pt_BR');
+    setlocale( LC_ALL, 'pt_BR');
 
     // Consulta ao banco de dados
     $produtos = "SELECT produtoID, nomeproduto, tempoentrega, precounitario, imagempequena ";
@@ -41,9 +48,12 @@
             </div>
             
             <div id="listagem_produtos"> 
+
             <?php
+            echo $_SESSION["user_portal"];
                 while($linha = mysqli_fetch_assoc($resultado)) {
             ?>
+
                 <ul>
                     <li class="imagem">
                         <a href="detalhe.php?codigo=<?php echo $linha['produtoID'] ?>">

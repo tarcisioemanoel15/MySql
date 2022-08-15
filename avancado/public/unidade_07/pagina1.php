@@ -1,4 +1,24 @@
 <?php require_once("../../conexao/conexao.php"); ?>
+
+<?php
+        //ISSO PARA PROTEGER A PAGINA
+        // criar inicial da variavel de secao
+        session_start();
+        // direcionando para pagina de login
+        if(!isset($_SESSION["user_portal"])){
+            header("location:login.php");
+        }
+
+
+
+
+//definir valor
+$_SESSION["usuario"] = "Andressa";
+?>
+
+
+
+
 <!doctype html>
 <html>
     <head>
@@ -14,7 +34,10 @@
         <?php include_once("../_incluir/funcoes.php"); ?>
         
         <main>
-
+            <?php echo $_SESSION["usuario"]; ?> <br>
+            <p>
+                <a href="pagina2.php">pagina2</a>
+            </p>
         </main>
 
         <?php include_once("../_incluir/rodape.php"); ?> 

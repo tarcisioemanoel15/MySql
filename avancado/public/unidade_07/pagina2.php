@@ -1,4 +1,14 @@
 <?php require_once("../../conexao/conexao.php"); ?>
+
+<?php
+// criar inicial da variavel de secao
+session_start();
+
+if(!isset($_SESSION["usuario"])){
+    header("Location: pagina1.php");
+}
+?>
+
 <!doctype html>
 <html>
     <head>
@@ -14,7 +24,10 @@
         <?php include_once("../_incluir/funcoes.php"); ?>
         
         <main>
-
+        <?php echo $_SESSION["usuario"]; ?> <br>
+            <p>
+                <a href="pagina1.php">pagina1</a>
+            </p>
         </main>
 
         <?php include_once("../_incluir/rodape.php"); ?> 
