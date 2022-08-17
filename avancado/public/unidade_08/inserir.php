@@ -1,10 +1,10 @@
 <?php require_once("../../conexao/conexao.php"); ?>
 
+
+
 <?php 
 // inserção no bano
 if(isset($_POST["cidade"])) {
-
-
 
    $nome        = $_POST["nometransportadora"];
    $endereco    = $_POST["endereco"];
@@ -25,22 +25,6 @@ if(isset($_POST["cidade"])) {
     header("location:listagem.php");
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   // selecão de estados
@@ -71,7 +55,7 @@ if(isset($_POST["cidade"])) {
                     <input type="text" name="endereco" placeholder="endereco">
                     <input type="text" name="cidade" placeholder="cidade">
                     
-                 <select name="estados">
+                 <select id="estados" name="estados">
                  <?php while($linha = mysqli_fetch_assoc($linha_estados)){ ?>
                         
                     <option value="<?php echo $linha["estadoID"]; ?>">
