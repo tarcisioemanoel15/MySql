@@ -1,6 +1,15 @@
 <?php require_once("../../conexao/conexao.php"); ?>
-<?php    ?>
 
+<?php
+if(isset($_POST["enviar"])){
+    
+    echo "<pre>";
+    print_r($_FILES['upload_file']);
+    echo "</pre>";
+
+    echo $_FILES['upload_file']['type']; 
+}
+?>
 
 <!doctype html>
 <html>
@@ -25,17 +34,26 @@
         <?php include_once("../_incluir/topo.php"); ?>
         <?php include_once("../_incluir/funcoes.php"); ?>  
         
-        <main>              
-            <div id="janela_formulario">
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="enviar" name="submit">
-                </form>
-            </div>
-        </main>      
+        <main>  
+            
+                
+
+
+
+        <div id="janela_formulario">
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+
+            <input type="file" name="upload_file" id="">
+            <input type="submit" name="enviar">
+
+
+
+
+            </form>
+        </div>
+        </main>
 
         <?php include_once("../_incluir/rodape.php"); ?>  
-
     </body>
 </html>
 
