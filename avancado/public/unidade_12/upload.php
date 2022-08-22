@@ -3,7 +3,12 @@
 
     <?php
         if(isset($_POST["enviar"])){
-            $mensagem = uploadArqivo($_FILES["upload_file"], "uploads");
+            $resposta = uploadArqivo($_FILES["upload_file"], "images/product_images");
+            
+            print_r($resposta);
+            $mensagem = $resposta[0];
+            $nome_arquivo = $resposta[1]; 
+
         }
     ?>
         
