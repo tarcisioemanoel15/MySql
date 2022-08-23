@@ -6,7 +6,11 @@
 
 if(isset($_POST["nome"])){
 
-    $resposta = enviarMensagem($_POST);
+    if($resposta = enviarMensagem($_POST)){
+        $mensagem = "Mensagem enviada com sucesso";
+    }else{
+        $mensagem = "erro no envio da mensagem";
+    };
     print_r($resposta);
 }
 

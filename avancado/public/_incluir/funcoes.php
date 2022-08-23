@@ -86,7 +86,27 @@
 
 
     function enviarMensagem($dados){
-        return $dados;
+
+        // dados do formulario
+        $nome               = $dados["nome"];
+        $email              = $dados["email"];
+        $mensagem_usuario   = $dados["mensagem"];
+
+        // criar variaveis de envio
+
+        $destino        =   "caninosbrancos10031@gmail.com";
+        $remetente      =   "tarcisioemanoel10031@gmail.com";
+        $assunto        =   "Mensagem do site";
+
+        // criar variaveis de envio
+
+        $mensagem  =    "O usuario " . $nome . "enviou uma mensagem" . '</br>';
+        $mensagem .=    "email do usuario:" . $email . '<br>';
+        $mensagem .=    "mensagem" . '<br>';
+        $mensagem .=    "$mensagem_usuario";
+
+        return mail($destino, $assunto, $mensagem, $remetente);
+
     }
 
 
