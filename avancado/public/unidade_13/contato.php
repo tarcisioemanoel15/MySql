@@ -1,4 +1,18 @@
+<?php include_once("../_incluir/funcoes.php"); ?> 
 <?php require_once("../../conexao/conexao.php"); ?>
+
+
+<?php
+
+if(isset($_POST["nome"])){
+
+    $resposta = enviarMensagem($_POST);
+    print_r($resposta);
+}
+
+?>
+
+
 
 <!doctype html>
 <html>
@@ -13,7 +27,6 @@
 
     <body>
         <?php include_once("../_incluir/topo.php"); ?>
-        <?php include_once("../_incluir/funcoes.php"); ?> 
         
         <main> 
             <div id="janela_formulario">

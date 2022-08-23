@@ -1,5 +1,5 @@
-<?php require_once("../../conexao/conexao.php"); ?>
 <?php include_once("../_incluir/funcoes.php"); ?>  
+<?php require_once("../../conexao/conexao.php"); ?>
 
     <?php
         if(isset($_POST["enviar"])){

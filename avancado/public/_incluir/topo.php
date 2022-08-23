@@ -27,9 +27,10 @@
             <a href="logout.php"> sair</a>
         </h5>
 
-    <?php } ?>
-
+        <?php } ?>
+        
         <img src="/avancado/public/_assets/logo_andes.gif">
         <img src="/avancado/public/_assets/text_bnwcoffee.gif">
+        
     </div>
 </header>

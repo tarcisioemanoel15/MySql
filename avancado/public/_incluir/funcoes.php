@@ -3,7 +3,7 @@
         $valor  = number_format($valor,2,",",".");
         return "R$ " . $valor;
     }
-
+    //  ///////////////////////////////////////////////////////////////////////// 
 
     function mostrarAviso($numero){
 
@@ -21,7 +21,7 @@
         return $array_erro[$numero];
     }
 
-
+    //  ////////////////////////////////////////////////////////////////////////////
 
     function uploadArqivo($arquivo_publicado, $minha_pasta){
 
@@ -44,7 +44,7 @@
                     echo $extensao;
                     */
     
-            if($tipo == "image/jpeg" || "image/png" || "image/gif"){
+            if($tipo == "image/jpeg" || $tipo == "image/png" || $tipo == "image/gif"){
     
                 if(move_uploaded_file($pasta_temporaria, $pasta . "/" . $arquivo)){
                     $mensagem = mostrarAviso($arquivo_publicado["error"]);
@@ -57,24 +57,10 @@
     }else{
         $mensagem = mostrarAviso($arquivo_publicado["error"]);
     }
-        return array($mensagem, $arquivo); 
+    return array($mensagem, $arquivo); 
     }
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // ////////////////////////////////////////////////////////////////////////
 
     function alterarNome($aquivo){
         $extensao     = strrchr($arquivo, ".");
@@ -97,6 +83,13 @@
         return "foto_" . $resultado . "_" . $codigo_ano . "_" . $codigo_data . $extensao;
 
     }
+
+
+    function enviarMensagem($dados){
+        return $dados;
+    }
+
+
     
 ?>
     

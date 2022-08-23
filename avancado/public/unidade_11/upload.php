@@ -1,5 +1,5 @@
-<?php require_once("../../conexao/conexao.php"); ?>
 <?php include_once("../_incluir/funcoes.php"); ?>  
+<?php require_once("../../conexao/conexao.php"); ?>
 
     <?php
         if(isset($_POST["enviar"])){
@@ -31,21 +31,16 @@
         
         <main>              
             <div id="janela_formulario">
-
                 <form action="upload.php" method="post" enctype="multipart/form-data">
-                
                 <input type="hidden" name="MAX_FILE_SIZE" value="45000000" >
-
                     <input type="file" name="upload_file" accept="image/png, image/jpeg, image/gif">
                     <input type="submit" name="enviar">
                 </form>
-  
             <?php
                 if(isset($mensagem)){
                     echo $mensagem;
                 }
             ?>    
-  
             </div>
         </main>      
 
@@ -53,7 +48,6 @@
 
     </body>  
 </html>
-
 <?php
     // Fechar conexao
     mysqli_close($conecta);
